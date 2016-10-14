@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+	font-family: "Arial";
+	margin: 0 auto;
+	overflow-y: hidden;
+}
+
+.container {
+	width: 100%;
+}
+
+a {
+	width: 100%;
+	float: left;
+	text-decoration: none;
+	text-align: center;
+	font-size: 100px;
+	font-family: 微软雅黑;
+	color: #fff;
+	line-height: 493.5px;
+}
+
+table {
+	width: 100%;
+	border: none;
+}
+
+.color-147224255 {
+	background: rgb(147,224,255);
+}
+
+.color-24714729 {
+	background: rgb(248,147,29);
+}
+
+.color-782976 {
+	background: rgb(78,29,76);
+}
+
+.color-090171 {
+	background: rgb(0,90,171);
+}

@@ -1,0 +1,56 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	max-width: 1000px;
+	min-width: 320px;
+	margin: 0 auto;
+	background: url("../img/background.jpg");
+	font-family: 微软雅黑;
+}
+
+.container {
+	width: 100%;
+}
+
+h2 {
+	text-align: center;
+	font-size: 50px;
+	color: red;
+	letter-spacing: 5px;
+}
+
+p {
+	text-align: center;
+	font-size: 30px;
+	color: #ccc;
+}
+
+.reset {
+	position: fixed;
+	top: 50px;
+	right: 50px;
+	display: block;
+	width: 100px;
+	height: 100px;
+	background: url(../img/reset.jpg) no-repeat;
+	background-size: cover;
+	border-radius: 50px;
+}
+
+h1 {
+	font-size: 80px;
+	text-align: center;
+	letter-spacing: 5px;
+	margin-bottom: 10px;
+	color: #fff;
+}
+
+label {
+	display: block;
+	text-align: center;
+	margin-top: 15px;
+	color: #fff;
+}
