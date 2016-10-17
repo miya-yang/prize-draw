@@ -58,7 +58,7 @@ window.onload = function(){
 	    	flag = 0;
 	    }
  	});
- 	$("body").click(function(){
+ 	$("#container").click(function(){
  		if(flag == 0){
 	    	startRan();
 	        flag = 1;
