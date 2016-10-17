@@ -26,3 +26,8 @@ h1 {
 	margin-top: 40px;
 	color: rgb(197,31,31);
 }
+
+.big {
+	font-family: "Arial";
+	font-size: 40px;
+}

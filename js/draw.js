@@ -1,4 +1,4 @@
-//无法得奖id
+//黑名单id
 var arr = [5778,5811,5881,5937];
 //防止重复id
 var arr2 = [];
@@ -94,7 +94,6 @@ function stopRan(){
 			ranNum = random(5760,5979);
 			i = -1;
 		}else if(ranNum != arr[i] && i == arr.length-1){
-			$("#number").html(ranNum);
 			//防止重复
 			for(var k = 0;k <= arr2.length;k++){
 				if(ranNum == arr2[k]){
@@ -105,7 +104,8 @@ function stopRan(){
 					break;
 				}
 			}
-			console.log(arr2);
+			$("#number").html(ranNum);
+			// console.log(arr2);
 			var j = 0;
 			//保存信息
 			while(1){
