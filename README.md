@@ -1,5 +1,6 @@
 # prizeDraw
-学生会文艺部用晚会抽奖系统
+学生会文艺部用晚会抽奖系统  
+[查看项目](https://miya-yang.github.io/prize-draw/)
 
 项目说明：
 - 要求分为一、二、三等奖
