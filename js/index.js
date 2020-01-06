@@ -3,7 +3,7 @@ window.onload = function(){
 	$("a").click(function(){
 		var prize = $(this).html();
 		switch(prize){
-			case "一等奖":
+			case "点我":
 				window.localStorage.setItem("prize",prize);
 				window.location.href = "draw.html";
 				break;

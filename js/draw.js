@@ -1,5 +1,31 @@
+let dataArr = [
+  {
+    name: '徐弥阳',
+    id: 'xumiyang'
+  },
+  {
+    name: '王思聪',
+    id: 'wangsicong'
+  },
+  {
+    name: '周杰伦',
+    id: 'zhoujielun'
+  },
+  {
+    name: '林俊杰',
+    id: 'linjunjie'
+  },
+  {
+    name: '吴磊',
+    id: 'wulei'
+  },
+  {
+    name: '吴宣仪',
+    id: 'wuxuanyi'
+  }
+]
 //黑名单id
-var arr = [5778,5811,5881,5937];
+var arr = [];
 //防止重复id
 var arr2 = [];
 var flag = 0;
@@ -35,38 +61,21 @@ window.onload = function(){
 		}
 	}
 	setH();
-	var prize = window.localStorage.getItem("prize");
-	$("#title").html(prize);
-	switch(prize){
-		case "一等奖":
-			$("#title").attr("title","first");
-			break;
-		case "二等奖":
-			$("#title").attr("title","second");
-			break;
-		case "三等奖":
-			$("#title").attr("title","third");
-			break;
-	}
 	$(document).keydown(function(e){
 	    if(!e) var e = window.event; 
-	    if(e.keyCode==32 && flag == 0){
+	    if(Number(e.keyCode)===32 && flag == 0){
+        if (dataArr.length === arr2.length) {
+          alert('所有人均已被抽中')
+          return false
+        }
+        $('#title').html('')
 	    	startRan();
-	        flag = 1;
-	    }else if(e.keyCode==32 && flag == 1){
+	      flag = 1;
+	    }else if(Number(e.keyCode)===32 && flag == 1){
 	    	stopRan();
 	    	flag = 0;
 	    }
  	});
- 	$("#container").click(function(){
- 		if(flag == 0){
-	    	startRan();
-	        flag = 1;
-	    }else if(flag == 1){
-	    	stopRan();
-	    	flag = 0;
-	    }
- 	})
 }
 
 window.onresize = function(){
@@ -80,45 +89,31 @@ function setH(){
 }
 
 function startRan(){
+  document.querySelector('#bgm').load()
+  document.querySelector('#bgm').play()
+  let len = dataArr.length
 	interval = setInterval(function(){
-		var ranNumber = random(1000,9999);
-		$("#number").html(ranNumber);
-	},10);
+		var ranNumber = random(0,len - 1);
+		$("#number").html(dataArr[ranNumber].name);
+	},50);
 }
 
 function stopRan(){
-	clearInterval(interval);
-	var ranNum = random(5760,5979);
-	for(var i = 0;i < arr.length;i++){
-		if(ranNum == arr[i]){
-			ranNum = random(5760,5979);
-			i = -1;
-		}else if(ranNum != arr[i] && i == arr.length-1){
-			//防止重复
-			for(var k = 0;k <= arr2.length;k++){
-				if(ranNum == arr2[k]){
-					ranNum = random(5760,5979);
-					k = -1;
-				}else if(k == arr2.length){
-					arr2.push(ranNum);
-					break;
-				}
-			}
-			$("#number").html(ranNum);
-			// console.log(arr2);
-			var j = 0;
-			//保存信息
-			while(1){
-				if(window.localStorage.getItem($("#title").attr("title") + j) == null){
-					window.localStorage.setItem($("#title").attr("title") + j,parseInt($("#number").html()));
-					break;
-				}else{
-					j++;
-				}
-			}
-			break;
-		}
-	}
+  document.querySelector('#bgm').pause()
+  clearInterval(interval);
+  let len = dataArr.length
+  var ranNum = random(0,len - 1);
+  //存在重复
+  while (1) {
+    if (arr2.indexOf(dataArr[ranNum].id) > -1) {
+      ranNum = random(0, len - 1)
+    } else {
+      break
+    }
+  }
+  arr2.push(dataArr[ranNum].id);
+  $("#number").html(dataArr[ranNum].name);
+  $("#title").html(dataArr[ranNum].id);
 }
 
 function random(min,max){
