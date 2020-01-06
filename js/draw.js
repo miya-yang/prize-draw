@@ -4,8 +4,12 @@ let dataArr = [
     id: 'xumiyang'
   },
   {
-    name: '王思聪',
-    id: 'wangsicong'
+    name: '石原里美',
+    id: 'shiyuanlimei'
+  },
+  {
+    name: '桥本环奈',
+    id: 'qiaobenhuannai'
   },
   {
     name: '周杰伦',
